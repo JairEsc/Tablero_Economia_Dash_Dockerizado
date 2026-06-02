@@ -43,7 +43,7 @@ gdf_shapefile=gdf_shapefile.reset_index()
 df_estatal['NOM_MUN'] = gdf_shapefile['NOM_MUN']
 
 map_default=auxiliarLeafltet.generateMapFromElection(lista_de_opciones_personal[-1],df_estatal,gdf_shapefile)
-df_industrial=pd.read_csv("Datos/CSVs/Balassa_Modificado_Historico/Balassa_Mod_Nivel_Municipio_por_Grupos_2025A.csv")
+df_industrial=pd.read_csv("Datos/CSVs/Balassa_Modificado_Historico/Balassa_Mod_Nivel_Municipio_por_Grupos_2026A.csv")
 print(df_industrial)
 server = Flask(__name__)
 
@@ -73,7 +73,7 @@ accordion =  dbc.Accordion(
         [
             html.P(explicaciones_breves.get('Complejidad Económica',''))
         ],
-        title="Índice de Complejidad Económica de Entidades Goegráficas",
+        title="Índice de Complejidad Económica de Entidades Geográficas",
         style={'display':'block'},
         id='accordion-ice',item_id="1"
         ),
@@ -235,7 +235,7 @@ app.layout = dbc.Container(
             dbc.Col(
                 [dcc.Store(id='df-industrial',data={
                                                         "data-frame": df_industrial.to_dict("records"),
-                                                        "año_sel":"2025A"
+                                                        "año_sel":"2026A"
                                                     }),
                     navbar,
                     dcc.Store(id='store-eleccion',modified_timestamp=-1),
